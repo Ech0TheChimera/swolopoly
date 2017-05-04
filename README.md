@@ -1,4 +1,4 @@
 # swolopoly
 
 Plan:
-	
+Construct items,	
