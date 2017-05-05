@@ -9,7 +9,7 @@ for (i of board){
 
 for (i of board) {
 	for (j of i){
-		gameBoard += ("<rect width=5 height=5 x="+((i*10)+10)+" y="+((j*10)+10)+"></rect>");
+		gameBoard += ("<rect width=5 height=5 x="+((i*10)+10)+" y="+((j*10)+10)+" />");
 	}
 }
 
