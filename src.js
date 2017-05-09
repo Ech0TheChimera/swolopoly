@@ -22,6 +22,12 @@ function drawBoard(){
 
 drawBoard();
 
+$("rect").hover(function() {
+	let x = $(this).attr("gridx");
+	let y = $(this).attr("gridy");
+	$("p").html(x + ", " + y);
+});
+
 game[10][10] += {
 	type:"player",
 	gains:0,
