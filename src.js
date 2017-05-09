@@ -22,3 +22,9 @@ function drawBoard(){
 }
 
 drawBoard();
+
+game[10][10] += {
+	type:"player",
+	gains:0,
+	life:100
+};
