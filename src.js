@@ -14,7 +14,7 @@ function drawBoard(){
 	for (i=0;i<game.length;i++) {
 		for (j=0;j<game[i].length;j++){
 			if ((i === 0 || i === 10) || (j === 0 || j === 10)){ // ONLY DRAW IF THE GRID IS ON THE FAR LEFT, RIGHT, TOP OR BOTTOM
-				gameBoardGen += ("<rect width=50 height=50 x="+(i*50)+" y="+(j*50)+" gridx="+i+" gridy="+j+" fill='hsl(180,100%,50%)' stroke='black' />"); // draw 
+				gameBoardGen += ("<rect width=75 height=75 x="+(i*75)+" y="+(j*75)+" gridx="+i+" gridy="+j+" fill='hsl(180,100%,50%)' stroke='black' />"); // draw 
 			}
 		}
 	}
