@@ -7,11 +7,6 @@ Plan: Construct items and develop rendering first, then instantiate objects in t
 		* Arrays holding place/equipment objects
 	* Parts move clockwise on board
 	* Parts start at pos[10][10]
-* Properties:
-	* Rent
-	* Cost
-	* ownedBy
-	* color
 
 * Functions
 	* renderBoard
