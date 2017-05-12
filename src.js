@@ -58,4 +58,13 @@ var pieceConstructor = function(life,gains,shape){
   	};
 };
 
-// 
+// equipment constructor \\
+var equipmentConstructor = function(posx,posy,type,cost,rent,color,){
+	this.posx = posx;
+	this.posy = posy;
+	this.type = type;
+	this.cost = cost;
+	this.rent = rent;
+	this.color = color;
+	this.owner = null;
+};
