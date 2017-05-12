@@ -8,6 +8,9 @@ for (i=0;i<game.length;i++){
 	game[i] = new Array(11);
 }
 
+// make gamePiece Render Var \\
+var pieceRender = "";
+
 function drawBoard(){
 	var gameBoardGen = ""; // holds content to eventually be pushed into SVG DOM \\
 	for (i=0;i<game.length;i++) {
@@ -20,7 +23,7 @@ function drawBoard(){
 	svg.html(gameBoardGen); //render board from gameBoardGen \\
 }
 
-drawBoard();
+drawBoard(); //draw the board \\
 
 $("rect").hover(function() {
 	let x = $(this).attr("gridx");
@@ -33,3 +36,26 @@ game[10][10] += {
 	gains:0,
 	life:100
 };
+
+// game piece constructor \\
+var pieceConstructor = function(life,gains,shape){
+	this.life = life;
+	this.gains = gains;
+	this.shape = shape;
+	this.posx = 11;
+	this.posy = 11;
+
+	// render player \\
+ 	this.display = function(){
+  		pieceRender = "<rect x="+this.posx+" y="+this.posy+"width=20 height=20 />";
+		$("#piece").html(pieceRender);
+  	};
+
+  	// move player \\
+  	this.deltaPos = function(x,y){
+  		this.posx = x;
+  		this.posy = y;
+  	};
+};
+
+// 
