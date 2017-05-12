@@ -31,12 +31,6 @@ $("rect").hover(function() {
 	$("p").html(x + ", " + y);
 });
 
-game[10][10] += {
-	type:"player",
-	gains:0,
-	life:100
-};
-
 // game piece constructor \\
 var pieceConstructor = function(life,gains,shape){
 	this.life = life;
