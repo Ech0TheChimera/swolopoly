@@ -8,6 +8,11 @@ for (i=0;i<game.length;i++){
 	game[i] = new Array(11);
 }
 
+// roll dice \\
+function roll(){
+	return (Math.floor(Math.random() * ((6-1) +1)+1));
+}
+
 // make gamePiece Render Var \\
 var pieceRender = "";
 
