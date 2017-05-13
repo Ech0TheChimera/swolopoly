@@ -61,4 +61,10 @@ var equipmentConstructor = function(posx,posy,type,cost,rent,color){
 	this.rent = rent;
 	this.color = color;
 	this.owner = null;
+	this.plates = 0;
+
+	// add plate method \\
+	this.addPlate = function(amount){
+		this.plates += amount;
+	};
 };
