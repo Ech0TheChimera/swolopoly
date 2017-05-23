@@ -1,7 +1,12 @@
-var svg = $("svg"); // define element we will write to \\
+var boardBack = $("#boardBack"); // define element we will write to for the board \\
+var boardPart = $("#boardPart"); // define element we will write to for the pieces \\
 
 // init board x \\
 var game = new Array(11);
+var players = [];
+players[0] = new pieceConstructor(100,100,"rect",0);
+players[1] = new pieceConstructor(100,100,"rect",270);
+players[1].deltaPos(9,10);
 
 // init board y \\
 for (i=0;i<game.length;i++){
@@ -25,24 +30,29 @@ function drawBoard(){
 			}
 		}
 	}
-	svg.html(gameBoardGen); //render board from gameBoardGen \\
+	boardBack.html(gameBoardGen); //render board from gameBoardGen \\
 }
 
 drawBoard(); //draw the board \\
 
-$("rect").hover(function() {
-	let x = $(this).attr("gridx");
-	let y = $(this).attr("gridy");
-	$("p").html(x + ", " + y);
-});
+function drawPlayers(){
+	var playerGen = "";
+	for (var i of players) {
+		playerGen += "<rect width=50 height=50 x="+(i.posx*75)+" y="+(i.posy*75)+" gridx="+i.posx+" gridy="+i.posy+" fill='hsl("+i.hcolor+",100%,50%)' stroke='black' />"; // draw \\
+	}
+	boardPart.html(playerGen);
+}
+
+drawPlayers();
 
 // game piece constructor \\
-var pieceConstructor = function(life,gains,shape){
+function pieceConstructor (life,gains,shape,hcolor){
 	this.life = life;
 	this.gains = gains;
 	this.shape = shape;
-	this.posx = 11;
-	this.posy = 11;
+	this.hcolor = hcolor;
+	this.posx = 10;
+	this.posy = 10;
 
 	// render player \\
  	this.display = function(){
@@ -55,7 +65,7 @@ var pieceConstructor = function(life,gains,shape){
   		this.posx = x;
   		this.posy = y;
   	};
-};
+}
 
 // equipment constructor \\
 var equipmentConstructor = function(posx,posy,type,cost,rent,color){
