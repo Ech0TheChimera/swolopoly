@@ -17,12 +17,21 @@
 			top: 0;
 			left: 0;
 		}
+		#btnRoll {
+			position: absolute;
+			z-index: 2;
+			top: 375px;
+			left: 375px;
+			width: 75px;
+			height: 75px;
+		}
 	</style>
 </head>
 
 <body>
-	<svg width=850 height=850 id="boardBack"></svg>
-	<svg width=850 height=850 id="boardPart"></svg>
+	<svg width=826 height=826 id="boardBack"></svg>
+	<svg width=826 height=826 id="boardPart"></svg>
+	<button id="btnRoll">ROLL</button>
 	<script src="jquery-3.2.1.min.js"></script>
 	<script src="src.js"></script>
 </body>
