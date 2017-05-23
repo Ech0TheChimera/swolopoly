@@ -3,11 +3,26 @@
 <head>
 	<title>Swolopoly!</title>
 	<link rel="icon" href="swolopoly.ico" />
+	<style>
+
+		#boardBack {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+		}
+		#boardPart {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+		}
+	</style>
 </head>
 
 <body>
-	<svg width=850 height=850></svg>
-	<p></p>
+	<svg width=850 height=850 id="boardBack"></svg>
+	<svg width=850 height=850 id="boardPart"></svg>
 	<script src="jquery-3.2.1.min.js"></script>
 	<script src="src.js"></script>
 </body>
