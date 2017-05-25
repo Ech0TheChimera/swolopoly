@@ -18,11 +18,9 @@ function roll(){
 	return (Math.floor(Math.random() * ((6-1) +1)+1));
 }
 
-function btnRollClick(){
+$("#btnRoll").click(function(){
 	console.log(roll() + roll());
-};
-
-$("#btnRoll").click(btnRollClick());
+});
 
 // make gamePiece Render Var \\
 var pieceRender = "";
