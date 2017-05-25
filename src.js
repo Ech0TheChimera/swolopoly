@@ -1,9 +1,11 @@
 var boardBack = $("#boardBack"); // define element we will write to for the board \\
+var boardEquipment = $("#boardEquipment") // define element we will write to for the equipment \\
 var boardPart = $("#boardPart"); // define element we will write to for the pieces \\
 
 // init board x \\
 var game = new Array(11);
 var players = [];
+var equipment = [];
 players[0] = new pieceConstructor(100,100,"rect",0);
 players[1] = new pieceConstructor(100,100,"rect",270);
 players[1].deltaPos(9,10);
@@ -39,6 +41,16 @@ function drawBoard(){
 
 drawBoard(); //draw the board \\
 
+function drawEquipment(){
+	var equipmentGen = "";
+	for (var i of equipment) {
+		equipmentGen += "<rect width=70 height=70 x="+(i.posx*75)+" y="+(i.posy*75)+" gridx="+i.posx+" gridy="+i.posy+" fill='hsl("+i.hcolor+",100%,50%)' stroke='black' />"; // draw \\
+	}
+	boardEquipment.html(playerGen);
+}
+
+drawEquipment();
+
 function drawPlayers(){
 	var playerGen = "";
 	for (var i of players) {
@@ -48,6 +60,7 @@ function drawPlayers(){
 }
 
 drawPlayers();
+
 
 // game piece constructor \\
 function pieceConstructor (life,gains,shape,hcolor){
@@ -72,13 +85,13 @@ function pieceConstructor (life,gains,shape,hcolor){
 }
 
 // equipment constructor \\
-var equipmentConstructor = function(posx,posy,type,cost,rent,color){
+var equipmentConstructor = function(posx,posy,type,cost,rent,hcolor){
 	this.posx = posx;
 	this.posy = posy;
 	this.type = type;
 	this.cost = cost;
 	this.rent = rent;
-	this.color = color;
+	this.hcolor = hcolor;
 	this.owner = null;
 	this.plates = 0;
 
